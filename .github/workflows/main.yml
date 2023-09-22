@@ -3,7 +3,7 @@ name: Picasso Workflow
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   tests:
