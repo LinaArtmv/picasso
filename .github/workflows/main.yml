@@ -1,4 +1,4 @@
-name: Picasso workflow
+name: Picasso Workflow
 
 on:
   push:
