@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0"]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "localhost"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -95,8 +95,8 @@ MEDIA_ROOT = '/data/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = 'redis'
 REDIS_PORT = 6380
 
-CELERY_BROKER_URL = "redis://127.0.0.1:6380"
-CELERY_RESULT_BACKEND = "redis://127.0.0.1:6380"
+CELERY_BROKER_URL = "redis://redis:6380/0"
+CELERY_RESULT_BACKEND = "redis://redis:6380/0"

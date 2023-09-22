@@ -23,7 +23,7 @@ services:
       - db
 
   backend:
-    build: ./picasso/
+    image: linaart/picasso_backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - static:/staticfiles/
@@ -34,7 +34,7 @@ services:
       - celery
 
   celery:
-    build: ./picasso/
+    image: linaart/picasso_celery
     command: python -m celery -A picasso worker -l info
     volumes:
       - static:/staticfiles/
@@ -44,7 +44,7 @@ services:
       - redis
 
   gateway:
-    build: ./docker/nginx/
+    image: linaart/picasso_gateway
     volumes:
       - static:/staticfiles/
       - data:/data/
