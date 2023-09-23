@@ -70,12 +70,12 @@ class FileCreateTest(TestCase):
         """Валидная форма создает запись в File."""
         files_count = File.objects.count()
         small_gif = (
-             b'\x47\x49\x46\x38\x39\x61\x02\x00'
-             b'\x01\x00\x80\x00\x00\x00\x00\x00'
-             b'\xFF\xFF\xFF\x21\xF9\x04\x00\x00'
-             b'\x00\x00\x00\x2C\x00\x00\x00\x00'
-             b'\x02\x00\x01\x00\x00\x02\x02\x0C'
-             b'\x0A\x00\x3B')
+            b'\x47\x49\x46\x38\x39\x61\x02\x00'
+            b'\x01\x00\x80\x00\x00\x00\x00\x00'
+            b'\xFF\xFF\xFF\x21\xF9\x04\x00\x00'
+            b'\x00\x00\x00\x2C\x00\x00\x00\x00'
+            b'\x02\x00\x01\x00\x00\x02\x02\x0C'
+            b'\x0A\x00\x3B')
         uploaded = SimpleUploadedFile(
             name='small.gif',
             content=small_gif,
@@ -87,7 +87,7 @@ class FileCreateTest(TestCase):
             data=form_data,
             follow=True)
         self.assertEqual(response.status_code, 201)
-        self.assertEqual(File.objects.count(), files_count+1)
+        self.assertEqual(File.objects.count(), files_count + 1)
         self.assertTrue(
             File.objects.filter(
                 file='http://127.0.0.1:8000/data/image/test.jpeg').exists())
