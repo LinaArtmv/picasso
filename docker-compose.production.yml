@@ -26,7 +26,7 @@ services:
     image: linaart/picasso_backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - static:/staticfiles/
+      - static:/backend_static/
       - data:/data/
     env_file: .env
     depends_on:
@@ -37,7 +37,7 @@ services:
     image: linaart/picasso_celery
     command: python -m celery -A picasso worker -l info
     volumes:
-      - static:/staticfiles/
+      - static:/backend_static/
       - data:/data/
     env_file: .env
     depends_on:

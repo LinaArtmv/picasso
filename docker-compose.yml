@@ -26,7 +26,7 @@ services:
     build: ./picasso/
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - static:/staticfiles/
+      - static:/backend_static/
       - data:/data/
     env_file: .env
     depends_on:
@@ -37,7 +37,7 @@ services:
     build: ./picasso/
     command: python -m celery -A picasso worker -l info
     volumes:
-      - static:/staticfiles/
+      - static:/backend_static/
       - data:/data/
     env_file: .env
     depends_on:
