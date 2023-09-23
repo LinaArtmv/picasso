@@ -11,7 +11,7 @@
 - [Celery](https://docs.celeryq.dev/en/stable/)
 - [Redis](https://redis.io/docs/)
 
-- Пример ответа на POST-запрос на адрес http://158.160.30.28/api/upload/: 
+- Пример ответа на POST-запрос на адрес https://linaart.sytes.net/api/upload/: 
 ```
 {
     "file": "http://127.0.0.1:8000/data/data/image/mannik_na_prostokvashe-557490_VoYrXqh.jpeg",
@@ -20,7 +20,7 @@
 }
 ```
 
-- Пример GET-запроса на адрес http://158.160.30.28/api/files/:
+- Пример GET-запроса на адрес https://linaart.sytes.net/api/files/:
 
 Пример ответа:
 
